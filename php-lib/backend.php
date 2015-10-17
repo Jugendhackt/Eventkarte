@@ -14,7 +14,17 @@ if(isset($_POST["create-route"])) {
 	$stmt->bindValue(':access_key', "TODO:ertkinzw8765ig");
 	$stmt->execute();
 
-	//TODO: Segments
+	$route_id = $database->lastInsertId();
+
+	foreach($route->segments as $segment) {
+		$stmt = $database->prepare("INSERT INTO route_segments (route_id, start, end, type) "
+				. "VALUES (:route_id, :start, :end, :type)");
+		$stmt->bindValue(':route_id', $route_id);
+		$stmt->bindValue(':start', $segment->start->latitude . "/" . $segment->start->latitude);
+		$stmt->bindValue(':end', $segment->end->latitude . "/" . $segment->end->latitude);
+		$stmt->bindValue(':type', 0);
+		$stmt->execute();
+	}
 
 	echo $stmt->errorInfo()[2];
 } else if(isset($_GET["get-routes"])) {
