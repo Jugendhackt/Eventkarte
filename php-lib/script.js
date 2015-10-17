@@ -3,6 +3,10 @@ function addRouteSegment(el) {
 	a.insertAfter($(el).parent());
 	a.load(EVENTKARTE_LIB_URL + "/templates/route-segment.php");
 }
+function choseType(el) {
+	$(el).parent().find("a").removeClass("selected");
+	$(el).addClass("selected");
+}
 function insertRoute() {
 	checkLocations();
 
@@ -36,6 +40,8 @@ function insertRoute() {
 	$(".eventkarte-route-segment").each(function( index ) {
 
 		var segment = {};
+		segment.freeseats = $(this).find(".eventkarte-free-seats").val();
+		segment.type = $(this).find(".eventkarte-route-type a.selected").data("value");
 		segment.start = {};
 		segment.start.latitude = $(this).find("input.eventkarte-location").data("latitude");
 		segment.start.longitude = $(this).find("input.eventkarte-location").data("longitude");
