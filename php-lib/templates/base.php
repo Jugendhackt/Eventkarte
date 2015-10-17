@@ -19,10 +19,10 @@ var EVENTKARTE_EVENT_POSITION = {"latitude":"<?php echo explode('/', EVENTKARTE_
 			</div>
 
 			<div class="eventkarte-route-location">
-				<input placeholder="Ort" value="Jugend Hackt" />
-				<input placeholder="Zeit"/>
+				<input id="eventkarte-location-destination" class="eventkarte-location" placeholder="Ort" value="Jugend Hackt" disabled/>
+				<input id="eventkarte-location-time" class="eventkarte-time" placeholder="Zeit"/>
 			</div>
-			<input type="button" value="Einstellen" onclick="insertRoute();" />
+			<input id="eventkarte-submit" type="button" value="Einstellen" onclick="insertRoute();" />
 		</form>
 	</div>
 </div>

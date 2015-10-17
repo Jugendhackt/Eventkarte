@@ -46,6 +46,7 @@ function insertRoute() {
 			alert(data);
 		} else {
 			alert("Gespeichert");
+			window.location.reload();
 		}
 	}).error(function( ) {
 		alert("Error");
@@ -60,6 +61,9 @@ function checkLocations() {
 			return;
 		}
 		if($(el).val() == "") {
+			return;
+		}
+		if($(el).attr("id") == "eventkarte-location-destination") {
 			return;
 		}
 
