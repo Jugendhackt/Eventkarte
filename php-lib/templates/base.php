@@ -10,8 +10,8 @@ var EVENTKARTE_EVENT_POSITION = {"latitude":"<?php echo explode('/', EVENTKARTE_
 	<div>
 		<h2>Route eintragen</h2>
 		<form>
-			<input placeholder="Name" id="eventkarte-ownername" />
-			<input placeholder="E-Mail (nicht öffentlich)" id="eventkarte-ownermail" />
+			<input type="text" placeholder="Name" id="eventkarte-ownername" />
+			<input type="email" placeholder="E-Mail (nicht öffentlich)" id="eventkarte-ownermail" />
 			<textarea placeholder="Kommentar" id="eventkarte-comment"></textarea>
 
 			<div class="eventkarte-route-segment">
@@ -20,7 +20,7 @@ var EVENTKARTE_EVENT_POSITION = {"latitude":"<?php echo explode('/', EVENTKARTE_
 
 			<div class="eventkarte-route-location">
 				<input id="eventkarte-location-destination" class="eventkarte-location" placeholder="Ort" value="Jugend Hackt" disabled/>
-				<input id="eventkarte-location-time" class="eventkarte-time" placeholder="Zeit"/>
+				<input type="time" id="eventkarte-location-time" class="eventkarte-time" placeholder="Zeit"/>
 			</div>
 			<input id="eventkarte-submit" type="button" value="Einstellen" onclick="insertRoute();" />
 		</form>

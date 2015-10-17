@@ -19,5 +19,5 @@
 		<a onclick="choseType(this);" data-value="5">
 			<img alt="Flugzeug" src="<?php echo $_SESSION["EVENTKARTE_LIB_URL"]; ?>/icons/aeroplane.png" /></a>
 	</div>
-	<input class="eventkarte-free-seats" placeholder="Freie Plätze" />
+	<input type="number" class="eventkarte-free-seats" placeholder="Freie Plätze" />
 </div>
