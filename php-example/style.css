@@ -11,16 +11,13 @@ body {
     padding: 10px;
     overflow-y: scroll;
     padding-top: 20px;
+	padding-bottom: 100px;
 }
 html {
     background: #f8f8ff;
 }
-p {
-    font-size: 20px;
-}
-p.justify {
-    text-align: justify;
-}
+:focus {outline:none;}
+::-moz-focus-inner {border:0;}
 h1 {
     margin:0px auto;
     text-align: left;
@@ -99,9 +96,9 @@ input:focus, textarea:focus {
 }
 #eventkarte-submit {
 	margin-top: 20px;
-	margin-bottom: 100px;
 	display: inline-block;
 	width: 100%;
+	cursor:pointer;
 }
 div#map {
 	margin: 0px auto;
@@ -151,5 +148,12 @@ div#map {
 	color: white;
 	font-size: 120%;
 }
-
-
+#contact {
+	margin-top: 50px;
+}
+#contact input,#contact textarea {
+	width: 100%;
+}
+#contact textarea {
+	height: 120px;
+}

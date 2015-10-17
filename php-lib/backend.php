@@ -53,7 +53,7 @@ if(isset($_POST["create-route"])) {
 	header('Content-Type: text/json');
 	header('Content-Disposition: attachment; filename="routes.json"');
 	echo json_encode($routes, JSON_PRETTY_PRINT);
-} else if($_GET["get-gps"]) {
+} else if(isset($_GET["get-gps"])) {
 	$city_name = str_replace("'", "", $_GET["get-gps"]);
 	$city_name = strtolower($city_name);
 	$dir = 'sqlite:geonames/geonames.db';
@@ -64,6 +64,19 @@ if(isset($_POST["create-route"])) {
 	header('Content-Type: text/json');
 	header('Content-Disposition: attachment; filename="gps.json"');
 	echo json_encode($rows[0], JSON_PRETTY_PRINT);
+} else if(isset($_POST["sendmail"])) {
+	$stmt = $database->query("select * from route_segments,routes where route_segments.id == '".(int)$_POST["sendmail"]."' AND routes.id == route_segments.route_id");
+	$stmt->execute();
+	$rows = $stmt->fetchAll();
+
+	$empfaenger = $rows[0]["owner_mail"];
+	$nachricht = $_POST["text"];
+	$header = 'From: system@jugendhackt.de' . "\r\n" .
+		'Reply-To: '. $_POST["sender_mail"];
+	$result = mail($empfaenger, "Kontaktanfrage von ".$_POST["sender_name"]." (Eventkarte)", $nachricht, $header);
+	if(!$result) {
+		echo "Sending failed";
+	}
 } else {
 	echo "Unknown request.";
 }

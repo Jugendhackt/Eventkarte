@@ -20,7 +20,7 @@ $(document).ready(function(){
 		});
 		polylineAB.addTo(map);
 		
-		polylineAB.bindPopup("<b>Name: </b>" + ownername + "<br><b>Freie Sitzpl\u00e4tze: </b>" + segment.free_seats + "<br><b>Bemerkung: </b>" + comment);
+		polylineAB.bindPopup("<b>Name: </b>" + ownername + " (<a onclick=\"contact("+segment.id+",'"+ownername+"');\" href=\"#\">Kontakt</a>)<br><b>Freie Sitzpl\u00e4tze: </b>" + segment.free_seats + "<br><b>Bemerkung: </b>" + comment);
 	}
 	function setMarkerForRoute(route){
 		var Pos = new L.LatLng(route.segments[0].start.latitude, route.segments[0].start.longitude);

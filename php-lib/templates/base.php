@@ -25,5 +25,15 @@ var EVENTKARTE_EVENT_POSITION = {"latitude":"<?php echo explode('/', EVENTKARTE_
 			<input id="eventkarte-submit" type="button" value="Einstellen" onclick="insertRoute();" />
 		</form>
 	</div>
+	<div id="contact" style="display:none;">
+		<h2><span id="eventkarte-mail-receiver"></span> kontaktieren</h2>
+		<form>
+			<input placeholder="Name" id="eventkarte-sendername" />
+			<input placeholder="E-Mail" id="eventkarte-sendermail" />
+			<input type="hidden" id="eventkarte-receiver_segment" />
+			<textarea placeholder="Nachricht" id="eventkarte-message"></textarea>
+			<input id="eventkarte-submit" type="button" value="Senden" onclick="sendMail();" />
+		</form>
+	</div>
 </div>
 <script src="<?php echo EVENTKARTE_LIB_URL; ?>/map.js"></script>

@@ -114,6 +114,39 @@ function checkLocations() {
 	});
 }
 
+function contact(segment_id, name) {
+	$("#eventkarte-mail-receiver").text(name);
+	$("#eventkarte-receiver_segment").val(segment_id);
+	$("#contact").show(1500);
+	$('html, body').animate({
+        scrollTop: $("#contact").offset().top
+    }, 1500);
+}
+
+function sendMail() {
+	var post = {};
+	post.sendmail = $("#eventkarte-receiver_segment").val();
+	post.sender_mail = $("#eventkarte-sendermail").val();
+	post.sender_name = $("#eventkarte-sendername").val();
+	post.text = $("#contact textarea").val();
+
+	$.ajax({
+	  type: 'POST',
+      async: false,
+	  data: post ,
+	  url: EVENTKARTE_LIB_URL + "/backend.php",
+	}).success(function( data ) {
+		if(data=="") {
+			alert("Gesendet");
+			$("#contact").hide(500);
+		} else {
+			alert(data);
+		}
+	}).error(function( ) {
+		alert("Error");
+	});
+}
+
 $(document).ready(function() {
     setInterval(checkLocations, 2000);
 });
