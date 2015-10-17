@@ -3,7 +3,7 @@
 	<input class="eventkarte-time" placeholder="Zeit"/>
 </div>
 <div class="eventkarte-route-type">
-	<a href="#" onclick="addRouteSegment(this);" class="eventkarte-route-plus">+</a>
+	<a onclick="addRouteSegment(this);" class="eventkarte-route-plus">+</a>
 	<div class="eventkarte-route-types">
 		<a href="#">Zug</a>
 		<a href="#">Bus</a>

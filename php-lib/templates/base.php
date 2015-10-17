@@ -6,7 +6,7 @@ var EVENTKARTE_EVENT_POSITION = {"latitude":"<?php echo explode('/', EVENTKARTE_
 								"longitude":"<?php echo explode('/', EVENTKARTE_EVENT_LOCATION)[1]; ?>"};
 </script>
 <div id="eventkarte">
-	<div style="padding:20px;border:1px solid black;" id="map"></div>
+	<div id="map"></div>
 	<div>
 		<h2>Route eintragen</h2>
 		<form>

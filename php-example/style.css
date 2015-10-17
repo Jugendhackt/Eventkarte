@@ -97,4 +97,6 @@ div#map {
 	margin-bottom: 20px;
 	width: 800px;
 	height: 400px;
+	max-width: 100%;
+	box-sizing: border-box;
 }
