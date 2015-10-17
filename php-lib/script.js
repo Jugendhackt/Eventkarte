@@ -2,7 +2,6 @@ function addRouteSegment(el) {
 	var a = $("<div class=\"eventkarte-route-segment\"/>");
 	a.insertAfter($(el).parent());
 	a.load(EVENTKARTE_LIB_URL + "/templates/route-segment.php");
-	return false; // Suppress onClick
 }
 function insertRoute() {
 	checkLocations();

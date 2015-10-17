@@ -4,7 +4,7 @@
     font-family: "Verdana", Helvetica, sans-serif;
     color: #2B2B2B;
     text-align: center;
-
+	box-sizing: border-box;
 }
 body {
     max-width: 1000px;
@@ -68,30 +68,20 @@ h1.scroll {
 }
 input {
 	padding: 3px;
-	box-sizing: border-box;
-}
-.eventkarte-location {
-	width: 400px;
-}
-.eventkarte-time {
-	width: 100px;
-}
-#eventkarte-ownername, #eventkarte-ownermail {
-	width: 250px;
+	margin-bottom: 5px;
 }
 #eventkarte-comment {
 	padding: 3px;
-	box-sizing: border-box;
 	display: block;
 	margin: 0px auto;
 	margin-bottom: 20px;
-	width: 505px;
+	width: 100%;
 }
 #eventkarte-submit {
 	margin-top: 20px;
 	margin-bottom: 100px;
 	display: inline-block;
-	width: 505px;
+	width: 100%;
 }
 div#map {
 	margin: 0px auto;
@@ -99,5 +89,22 @@ div#map {
 	width: 800px;
 	height: 400px;
 	max-width: 100%;
-	box-sizing: border-box;
+}
+#eventkarte form{
+	width: 500px;
+	max-width: 100%;
+	margin: 0px auto;
+}
+.eventkarte-location {
+	width: 80%;
+	width: -moz-calc(100% - 85px);
+	width: -webkit-calc(100% - 85px);
+	width: calc(100% - 85px);
+}
+.eventkarte-time {
+	float: right;
+	width: 80px;
+}
+#eventkarte-ownername, #eventkarte-ownermail {
+	width: 49%;
 }
