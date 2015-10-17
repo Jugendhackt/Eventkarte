@@ -1,62 +1,47 @@
 [
-	{
-		"id": 8372409,
-		"ownermail": "someone@gmail.de",
-		"ownername": "Hubert",
-		"acceskey": 87908,
-		"comment": "Hab euch lieb!",
-		"segments":[
-			{
-				"id": 73298839,
-				"start": {
-					"latitude": 8.9480930,
-					"longitude": 0.32898
-				}
-				"end": {
-					"latitude": 8.683939,
-					"longitude": 0.492986
-				}
-				"time": 0,
-				"free_seats": 2
-			}
-		],
-	}
-	{
-		"id": 8372409,
-		"ownermail": "someone@gmail.de",
-		"ownername": "Hubert",
-		"acceskey": 87908,
-		"comment": "Hab euch lieb!",
-		"segments":[
-			{
-				"id": 73298839,
-				"start": {
-					"latitude": 7.248382,
-					"longitude": 0.55555555
-				}
-				"end": {
-					"latitude": 7.454959,
-					"longitude": 0.492986
-				}
-				"time": 0,
-				"free_seats": 25
-			}
-		],
-		"segments":[
-			{
-				"id": 73298839,
-				"start": {
-					"latitude": 7.454959,
-					"longitude": 0.492986
-				}
-				"end": {
-					"latitude": 7.2382990,
-					"longitude": 0.743986
-				}
-				"time": 0,
-				"free_seats": 2
-			}
-		],
-	}
+    {
+        "id": 8372409,
+        "ownermail": "someone@gmail.de",
+        "ownername": "Hubert",
+        "acceskey": 87908,
+        "comment": "Hab euch lieb!",
+        "segments": [
+            {
+                "id": 73298839,
+                "start": {
+                    "latitude": 8.948093,
+                    "longitude": 0.32898
+                },
+                "end": {
+                    "latitude": 8.683939,
+                    "longitude": 0.492986
+                },
+                "time": 0,
+                "free_seats": 2
+            }
+        ]
+    },
+    {
+        "id": 8372409,
+        "ownermail": "someone@gmail.de",
+        "ownername": "Hubert",
+        "acceskey": 87908,
+        "comment": "Hab euch lieb!",
+        "segments": [
+            {
+                "id": 73298839,
+                "start": {
+                    "latitude": 7.454959,
+                    "longitude": 0.492986
+                },
+                "end": {
+                    "latitude": 7.238299,
+                    "longitude": 0.743986
+                },
+                "time": 0,
+                "free_seats": 2
+            }
+        ]
+    }
 ]
 
