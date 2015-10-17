@@ -1,5 +1,6 @@
 <?php
 
-define("EVENTKARTE_DB_LOCATION", "/Eventkarte/php-example/eventkarte.db");
-define("EVENTKARTE_BACKEND_LOCATION", "/Eventkarte/php-library/backend/");
+define("EVENTKARTE_DB_PATH", "eventkarte.db");
+define("EVENTKARTE_LIB_URL", "http://localhost/Eventkarte/php-lib");
+define("EVENTKARTE_EVENT_LOCATION", "48.7666667/9.1833333");
 include("../php-lib/library.php");

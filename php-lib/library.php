@@ -1,7 +1,10 @@
 <?php
 
-if(!defined("EVENTKARTE_DB_LOCATION") || !defined("EVENTKARTE_BACKEND_LOCATION")) {
-	exit("Eventkarte: Please define EVENTKARTE_DB_LOCATION and EVENTKARTE_BACKEND_LOCATION");
+if(!defined("EVENTKARTE_DB_PATH") || !defined("EVENTKARTE_EVENT_LOCATION")  ||
+   !defined("EVENTKARTE_LIB_URL")) {
+	exit("<strong>Eventkarte:</strong> Please define EVENTKARTE_DB_PATH, EVENTKARTE_LIB_URL and EVENTKARTE_EVENT_LOCATION");
 }
+define("EVENTKARTE_LIB_PATH", realpath(dirname(__FILE__)));
 
-echo "<div id=\"eventkarte\">Eventkarte...</div>";
+include(EVENTKARTE_LIB_PATH . "/base.html");
+
