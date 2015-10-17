@@ -2,7 +2,7 @@
 	
 $(document).ready(function(){
 
-	function drawSegment(segment)
+	function drawSegment(segment, ownername, comment)
 	{
 		var PosA = new L.LatLng(segment.start.latitude, segment.start.longitude);		
 		var markerA = L.marker(PosA).addTo(map);
@@ -16,17 +16,23 @@ $(document).ready(function(){
 
 		var polylineAB = new L.polyline(posListAB, {
 
-			color: '#cc1144',
+			color: 'pink',
 			weight: 10,
 			opacity: 1,
 			smoothFactor: 1
 		});
 		polylineAB.addTo(map);
+		
+		polylineAB.bindPopup("<b>Name: </b>" + ownername + "<br><b>Freie Sitzpl\u00e4tze: </b>" + segment.free_seats + "<br><b>Bemerkung: </b>" + comment);
+		
+
 	}
 	function drawRoute(route){
-		$.each(route.segments,function(index,value){
-				console.log(value);
-				drawSegment(value)
+		var ownername = route.ownername
+		var comment = route.comment
+			$.each(route.segments,function(index,value){
+				//console.log(value);
+			drawSegment(value, ownername, comment)
 		});
 	}
 	var map = L.map('map').setView([51.5, -0.09], 15);
