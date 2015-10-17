@@ -30,7 +30,7 @@ h1 {
     border-bottom: 1px solid #cccccc;
     position: fixed;
     padding: 15px 0px;
-    box-shadow: 10px 10px 50px 20px #0078A8  inset;
+    box-shadow: 10px 10px 50px 20px #0078A8 inset;
     right: 0px;
     left: 0px;
     top: 0px;
@@ -38,7 +38,7 @@ h1 {
     text-align: center;
     letter-spacing: 4.5px;
     font-family: "Verdana", Helvetica, Arial, sans-serif;
-    background-color: #0078A8 ;
+    background-color: #0078A8;
     transition: 0.3s all ease;
 	z-index: 2000;
 }
