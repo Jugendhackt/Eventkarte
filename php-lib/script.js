@@ -4,6 +4,7 @@ function addRouteSegment(el) {
 	a.load(EVENTKARTE_LIB_URL + "/templates/route-segment.php");
 }
 function insertRoute() {
+	checkLocations();
 	//TODO: Validation
 
 	var route = {};
@@ -17,16 +18,16 @@ function insertRoute() {
 
 		var segment = {};
 		segment.start = {};
-		segment.start.latitude = $(this).data("latitude");
-		segment.start.longitude = $(this).data("longitude");
+		segment.start.latitude = $(this).find("input.eventkarte-location").data("latitude");
+		segment.start.longitude = $(this).find("input.eventkarte-location").data("longitude");
 
 		if(index+1 == $(".eventkarte-route-segment").length) {
 			segment.end = EVENTKARTE_EVENT_POSITION;
 		} else {
 			var next = $(".eventkarte-route-segment")[index+1];
 			segment.end = {};
-			segment.end.latitude = $(next).data("latitude");
-			segment.end.longitude = $(next).data("longitude");
+			segment.end.latitude = $(next).find("input.eventkarte-location").data("latitude");
+			segment.end.longitude = $(next).find("input.eventkarte-location").data("longitude");
 		}
 
 		segment.time = "";
@@ -34,17 +35,54 @@ function insertRoute() {
 		route.segments.push(segment);
 	});
 
-	alert(JSON.stringify(route));
+	//alert(JSON.stringify(route));
 
 	$.ajax({
       type: 'POST',
       data: { "create-route": JSON.stringify(route) } ,
 	  url: EVENTKARTE_LIB_URL + "/backend.php",
 	}).success(function( data ) {
-		alert(data);
+		if(data != "") {
+			alert(data);
+		} else {
+			alert("Gespeichert");
+		}
 	}).error(function( ) {
 		alert("Error");
 	});
 }
 
+function checkLocations() {
+	$("input.eventkarte-location").each(function( index ) {
+		var el = $(this);
+		if($(el).val() == $(el).data("last-check")) {
+			// Do not check again
+			return;
+		}
+		if($(el).val() == "") {
+			return;
+		}
+
+		$.ajax({
+		  type: 'GET',
+          async: false,
+		  data: { "get-gps": $(el).val() } ,
+		  url: EVENTKARTE_LIB_URL + "/backend.php",
+		}).success(function( data ) {
+			$(el).data("latitude", data.lat);
+			$(el).data("longitude", data.lon);
+			$(el).data("last-check", $(el).val());
+			$(el).css("background","#aaffaa");
+		}).error(function( ) {
+			$(el).data("latitude", "");
+			$(el).data("longitude", "");
+			$(el).css("background","#ffaaaa");
+		});
+
+	});
+}
+
+$(document).ready(function() {
+    setInterval(checkLocations, 2000);
+});
 

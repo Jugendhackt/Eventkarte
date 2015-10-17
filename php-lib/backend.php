@@ -14,6 +14,8 @@ if(isset($_POST["create-route"])) {
 	$stmt->bindValue(':access_key', "TODO:ertkinzw8765ig");
 	$stmt->execute();
 
+	//TODO: Segments
+
 	echo $stmt->errorInfo()[2];
 } else if(isset($_GET["get-routes"])) {
 	$routes = array();
@@ -29,9 +31,10 @@ if(isset($_POST["create-route"])) {
 			$start = explode("/", $row["start"]);
 			$segment["start"] = array("latitude" => (float) $start[0], "longitude" => (float) $start[1]);
 			$end = explode("/", $row["end"]);
-			$segment["end"] = array("latitude" => (float) $start[0], "longitude" => (float) $start[1]);
+			$segment["end"] = array("latitude" => (float) $end[0], "longitude" => (float) $end[1]);
 			$segment["time"] = (int) $row["time"];
 			$segment["free_seats"] = (int) $row["free_seats"];
+			$segment["type"] = (int) $row["type"];
 			$route["segments"][] = $segment;
 		}
 		$routes[] = $route;
@@ -39,6 +42,17 @@ if(isset($_POST["create-route"])) {
 	header('Content-Type: text/json');
 	header('Content-Disposition: attachment; filename="routes.json"');
 	echo json_encode($routes, JSON_PRETTY_PRINT);
+} else if($_GET["get-gps"]) {
+	$city_name = str_replace("'", "", $_GET["get-gps"]);
+	$city_name = strtolower($city_name);
+	$dir = 'sqlite:geonames/geonames.db';
+	$geodatabase = new PDO($dir) or die("cannot open the database");
+	$stmt = $geodatabase->query("select * from geonames where lower(name) == '$city_name'");
+	$stmt->execute();
+	$rows = $stmt->fetchAll();
+	header('Content-Type: text/json');
+	header('Content-Disposition: attachment; filename="gps.json"');
+	echo json_encode($rows[0], JSON_PRETTY_PRINT);
 } else {
 	echo "Unknown request.";
 }
