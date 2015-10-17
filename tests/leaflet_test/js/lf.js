@@ -16,7 +16,7 @@ $(document).ready(function(){
 
 		var polylineAB = new L.polyline(posListAB, {
 
-			color: '#cc1144',
+			color: getSegmentColor(segment,segment.type),
 			weight: 10,
 			opacity: 1,
 			smoothFactor: 1
@@ -33,36 +33,41 @@ $(document).ready(function(){
 
 	// create the tile layer with correct attribution
 	var OpenStreetMap_Mapnik = L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 19, attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>' }).addTo(map);
-/*
-	var markerA = L.marker([51.5, -0.09]).addTo(map);
-	var markerB = L.marker([52.5170365, 13.3888599]).addTo(map);
 
-	markerA.bindPopup("London");
-	markerB.bindPopup("Berlin");
-
-	var PosA = new L.LatLng(51.5, -0.09);
-	var PosB = new L.LatLng(52.5170365, 13.3888599);
-	var posList = [PosA, PosB];
-
-	var polylineAB = new L.polyline(posList, {
-
-		color: 'green',
-		weight: 10,
-		opacity: 1,
-		smoothFactor: 1
-
-	});
-	polylineAB.addTo(map);
-*/
-	$.getJSON( "js/data.json", function( data ) {
+	$.getJSON( "http://127.0.0.1/Eventkarte/php-lib/backend.php?get-routes", function( data ) {
 		//alert(data);
 		$.each(data,function(index,value){
 				console.log(value);
 				drawRoute(value)
 		});		
-		//drawRoute(data[0]);
 		
 	});
+	function getSegmentColor(transportType)
+	{
+		switch(transportType){
+		case 0://car
+			return "red";
+			break;
+		case 1://train
+			return "pink";
+			break;
+		case 2://ship
+			return "blue";
+			break;
+		case 3://bus
+			return "yellow";
+			break;
+		case 4://bike
+			return "cyan";
+			break;
+		case 5://plane
+			return "white";
+			break;
+		default://ufo
+			return "green";
+		}
+			
+	}
 	
 });
 
