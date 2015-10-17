@@ -4,7 +4,6 @@ function addRouteSegment(el) {
 	a.load(EVENTKARTE_LIB_URL + "/templates/route-segment.php", function(){
 		$(a).hide(0).show(500);
 	});
-	//TODO: Animate
 }
 function choseType(el) {
 	$(el).parent().find("a").removeClass("selected");
