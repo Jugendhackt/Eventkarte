@@ -1,7 +1,7 @@
 function addRouteSegment(el) {
 	var a = $("<div class=\"eventkarte-route-segment\"/>");
 	a.insertAfter($(el).parent());
-	a.load(EVENTKARTE_LIB_URL + "/templates/route-segment.html");
+	a.load(EVENTKARTE_LIB_URL + "/templates/route-segment.php");
 }
 function insertRoute() {
 	//TODO: Validation
@@ -12,18 +12,26 @@ function insertRoute() {
 	route.comment   = $("#eventkarte-comment").val();
 	route.segments  = Array();
 
+	var last_location = null;
 	$(".eventkarte-route-segment").each(function( index ) {
 
 		var segment = {};
 		segment.start = {};
-		segment.start.latitude = 0;
-		segment.start.longitude = 0;
-		segment.end = {};
-		segment.end.latitude = 0;
-		segment.end.longitude = 0;
+		segment.start.latitude = $(this).data("latitude");
+		segment.start.longitude = $(this).data("longitude");
+
+		if(index+1 == $(".eventkarte-route-segment").length) {
+			segment.end = EVENTKARTE_EVENT_POSITION;
+		} else {
+			var next = $(".eventkarte-route-segment")[index+1];
+			segment.end = {};
+			segment.end.latitude = $(next).data("latitude");
+			segment.end.longitude = $(next).data("longitude");
+		}
+
 		segment.time = "";
-		segment.free_seats = "";
-		route.segmentspush(segment);
+		segment.free_seats = 0;
+		route.segments.push(segment);
 	});
 
 	alert(JSON.stringify(route));
@@ -38,3 +46,5 @@ function insertRoute() {
 		alert("Error");
 	});
 }
+
+

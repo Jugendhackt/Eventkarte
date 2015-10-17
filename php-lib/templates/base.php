@@ -1,0 +1,28 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="<?php echo EVENTKARTE_LIB_URL; ?>/script.js"></script>
+<script>
+var EVENTKARTE_LIB_URL = "<?php echo EVENTKARTE_LIB_URL; ?>";
+var EVENTKARTE_EVENT_POSITION = {"latitude":"<?php echo explode('/', EVENTKARTE_EVENT_LOCATION)[0]; ?>",
+								"longitude":"<?php echo explode('/', EVENTKARTE_EVENT_LOCATION)[1]; ?>"};
+</script>
+<div id="eventkarte">
+	<div style="padding:20px;border:1px solid black;">Hier könnte Ihre Karte stehen...</div>
+	<div>
+		<h2>Route eintragen</h2>
+		<form>
+			<input placeholder="Name" id="eventkarte-ownername" />
+			<input placeholder="E-Mail (nicht öffentlich)" id="eventkarte-ownermail" />
+			<textarea placeholder="Kommentar" id="eventkarte-comment"></textarea>
+
+			<div class="eventkarte-route-segment">
+				<?php include("route-segment.php"); ?>
+			</div>
+
+			<div class="eventkarte-route-location">
+				<input placeholder="Ort" value="Jugend Hackt" />
+				<input placeholder="Zeit"/>
+			</div>
+			<input type="button" value="Einstellen" onclick="insertRoute();" />
+		</form>
+	</div>
+</div>
