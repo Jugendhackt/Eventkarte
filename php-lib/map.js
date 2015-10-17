@@ -13,8 +13,7 @@ $(document).ready(function(){
 		var posListAB = [PosA, PosB];
 
 		var polylineAB = new L.polyline(posListAB, {
-
-			color: getSegmentColor(segment,segment.type),
+			color: getSegmentColor(segment.type),
 			weight: 8,
 			opacity: 1,
 			smoothFactor: 1
@@ -45,7 +44,7 @@ $(document).ready(function(){
 		//alert(data);
 		
 		$.each(data,function(index,value){
-				console.log(value);
+				
 				drawRoute(value);
 				setMarkerForRoute(value);
 		});		

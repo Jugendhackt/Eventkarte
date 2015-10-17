@@ -5,9 +5,13 @@
 <div class="eventkarte-route-type">
 	<a onclick="addRouteSegment(this);" class="eventkarte-route-plus">+</a>
 	<div class="eventkarte-route-types">
-		<a href="#">Zug</a>
-		<a href="#">Bus</a>
-		<a href="#">Auto</a>
+		<a onclick="choseType(this);" data-value="0" class="selected">Auto</a>
+		<a onclick="choseType(this);" data-value="1">Zug</a>
+		<a onclick="choseType(this);" data-value="2">Schiff</a>
+		<br />
+		<a onclick="choseType(this);" data-value="3">Bus</a>
+		<a onclick="choseType(this);" data-value="4">Fahrrad</a>
+		<a onclick="choseType(this);" data-value="5">Flugzeug</a>
 	</div>
-	<input placeholder="Freie Plätze" />
+	<input class="eventkarte-free-seats" placeholder="Freie Plätze" />
 </div>

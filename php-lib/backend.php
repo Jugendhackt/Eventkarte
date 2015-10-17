@@ -17,12 +17,13 @@ if(isset($_POST["create-route"])) {
 	$route_id = $database->lastInsertId();
 
 	foreach($route->segments as $segment) {
-		$stmt = $database->prepare("INSERT INTO route_segments (route_id, start, end, type) "
-				. "VALUES (:route_id, :start, :end, :type)");
+		$stmt = $database->prepare("INSERT INTO route_segments (route_id, start, end, type, free_seats) "
+				. "VALUES (:route_id, :start, :end, :type, :free_seats)");
 		$stmt->bindValue(':route_id', $route_id);
 		$stmt->bindValue(':start', $segment->start->latitude . "/" . $segment->start->longitude);
 		$stmt->bindValue(':end', $segment->end->latitude . "/" . $segment->end->longitude);
-		$stmt->bindValue(':type', 0);
+		$stmt->bindValue(':type', $segment->type);
+		$stmt->bindValue(':free_seats', $segment->freeseats);
 		$stmt->execute();
 	}
 

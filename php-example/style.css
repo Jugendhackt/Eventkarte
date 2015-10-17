@@ -108,3 +108,14 @@ div#map {
 #eventkarte-ownername, #eventkarte-ownermail {
 	width: 49%;
 }
+.eventkarte-route-types a {
+	text-decoration: none;
+	display: inline-block;
+	background: #ccc;
+	cursor: pointer;
+	padding: 3px;
+	margin-bottom: 3px;
+}
+.eventkarte-route-types a.selected {
+	background: #0078A8;
+}
