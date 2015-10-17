@@ -47,7 +47,8 @@ h1.scroll {
     font-size: 30px;
 }
 h2 {
-	text-align: center;
+	text-align: left;
+	margin-bottom: 10px; 
 }
 #content {
     margin-top: 90px;
