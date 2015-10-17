@@ -25,12 +25,12 @@ p.justify {
 h1 {
     margin:0px auto;
     text-align: left;
-    color: black;
+    color: #E2E2E2;
     text-decoration: ;
     border-bottom: 1px solid #cccccc;
     position: fixed;
     padding: 15px 0px;
-    box-shadow: 10px 10px 50px 20px #7fff00 inset;
+    box-shadow: 10px 10px 50px 20px #0078A8  inset;
     right: 0px;
     left: 0px;
     top: 0px;
@@ -38,8 +38,9 @@ h1 {
     text-align: center;
     letter-spacing: 4.5px;
     font-family: "Verdana", Helvetica, Arial, sans-serif;
-    background-color: #76ee00;
+    background-color: #0078A8 ;
     transition: 0.3s all ease;
+	z-index: 2000;
 }
 h1.scroll {
     padding: 10px 0px;
