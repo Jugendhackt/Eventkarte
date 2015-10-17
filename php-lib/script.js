@@ -108,6 +108,7 @@ function checkLocations() {
 		}).error(function( ) {
 			$(el).data("latitude", "");
 			$(el).data("longitude", "");
+			$(el).data("last-check", $(el).val());
 			$(el).css("background","#ffaaaa");
 		});
 

@@ -11,6 +11,7 @@ define("EVENTKARTE_LIB_PATH", realpath(dirname(__FILE__)));
 
 session_start();
 $_SESSION["EVENTKARTE_DB_PATH"] = EVENTKARTE_DB_PATH;
+$_SESSION["EVENTKARTE_LIB_URL"] = EVENTKARTE_LIB_URL;
 
 include(EVENTKARTE_LIB_PATH . "/connect_db.php");
 
