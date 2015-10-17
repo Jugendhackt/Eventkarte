@@ -23,7 +23,3 @@ var polylineAB = new L.polyline(posList, {
 
 });
 polylineAB.addTo(map);
-=======
-var marker = L.marker([51.5, -0.09]).addTo(map);
-marker.bindPopup("Hallo Welt").openPopup();
->>>>>>> 647458c961e07ff68d8da1439ec9e1cf664b5520
