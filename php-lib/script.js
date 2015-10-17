@@ -2,6 +2,7 @@ function addRouteSegment(el) {
 	var a = $("<div class=\"eventkarte-route-segment\"/>");
 	a.insertAfter($(el).parent());
 	a.load(EVENTKARTE_LIB_URL + "/templates/route-segment.php");
+	//TODO: Animate
 }
 function choseType(el) {
 	$(el).parent().find("a").removeClass("selected");

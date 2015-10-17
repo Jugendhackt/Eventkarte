@@ -3,7 +3,6 @@
     padding: 0px;
     font-family: "Verdana", Helvetica, sans-serif;
     color: #2B2B2B;
-    text-align: center;
 	box-sizing: border-box;
 }
 body {
@@ -46,32 +45,44 @@ h1.scroll {
     padding: 10px 0px;
     font-size: 30px;
 }
+h2 {
+	text-align: center;
+}
 #content {
     margin-top: 90px;
 }
 .eventkarte-route-types{
-	border-left: 4px solid green;
+	border-left: 4px solid #0078A8;
 	display: inline-block;
 	padding: 15px 5px;
 }
+.eventkarte-route-type{
+	margin-left: 20px;
+}
 .eventkarte-route-plus{
 	color: white;
-	background-color: green;
+	background-color: #0078A8;
 	text-decoration: none;
 	border-radius: 20px;
 	display: inline-block;
 	padding: 3px 8px;
 	font-weight: bold;
+	cursor: pointer;
 }
 .eventkarte-route-type > input {
 	width: 100px;
 }
 input {
-	padding: 3px;
 	margin-bottom: 5px;
 }
+input, textarea {
+	padding: 5px;
+	border: 1px solid #bbb;
+}
+input:focus, textarea:focus {
+	border: 1px solid #0078A8;
+}
 #eventkarte-comment {
-	padding: 3px;
 	display: block;
 	margin: 0px auto;
 	margin-bottom: 20px;
@@ -119,3 +130,12 @@ div#map {
 .eventkarte-route-types a.selected {
 	background: #0078A8;
 }
+#eventkarte-submit {
+	background: #0078A8;
+	border: none;
+	padding: 10px;
+	color: white;
+	font-size: 120%;
+}
+
+
