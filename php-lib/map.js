@@ -7,8 +7,6 @@ $(document).ready(function(){
 			
 		var PosA = new L.LatLng(segment.start.latitude, segment.start.longitude);
 		var PosB = new L.LatLng(segment.end.latitude, segment.end.longitude);			
-		//var markerB = L.marker(PosB).addTo(map);
-
 
 		var posListAB = [PosA, PosB];
 
@@ -17,6 +15,9 @@ $(document).ready(function(){
 			weight: 8,
 			opacity: 1,
 			smoothFactor: 1
+		});
+		polylineAB.on('mousein', function(e) {
+    		this.weight=20;
 		});
 		polylineAB.addTo(map);
 		
@@ -39,7 +40,11 @@ $(document).ready(function(){
 	// create the tile layer with correct attribution
 	var OpenStreetMap_Mapnik = L.tileLayer('http://{s}.tile.openstreetmap.se/hydda/full/{z}/{x}/{y}.png', { maxZoom: 15, minZoom: 5, attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>' }).addTo(map);
 	//Zielpunkt	
-	L.marker([EVENTKARTE_EVENT_POSITION.latitude, EVENTKARTE_EVENT_POSITION.longitude]).addTo(map);
+	var redIcon = L.icon({
+		iconUrl: '../php-lib/icons/marker-icon-jh.png',
+		iconAnchor: [14, 41],
+	});
+	L.marker([EVENTKARTE_EVENT_POSITION.latitude, EVENTKARTE_EVENT_POSITION.longitude],{icon: redIcon}).addTo(map);
 	$.getJSON( EVENTKARTE_LIB_URL + "/backend.php?get-routes", function( data ) {
 		//alert(data);
 		

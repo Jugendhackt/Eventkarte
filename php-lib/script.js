@@ -104,6 +104,7 @@ function checkLocations() {
 			$(el).data("longitude", data.lon);
 			$(el).data("last-check", $(el).val());
 			$(el).css("background","#aaffaa");
+			map.setView([data.lat,data.lon]);
 		}).error(function( ) {
 			$(el).data("latitude", "");
 			$(el).data("longitude", "");
