@@ -52,25 +52,25 @@ $(document).ready(function(){
 	{
 		switch(transportType){
 		case 0://car
-			return "red";
+			return '#D4534E';
 			break;
 		case 1://train
-			return "pink";
+			return '#FFEE00';
 			break;
 		case 2://ship
-			return "blue";
+			return '#FF9800';
 			break;
 		case 3://bus
-			return "yellow";
+			return '#CDDC39';
 			break;
 		case 4://bike
-			return "cyan";
+			return '#8FB0DC';
 			break;
 		case 5://plane
-			return "white";
+			return '#6CABDC';
 			break;
 		default://ufo
-			return "green";
+			return '#E91E63';
 		}
 			
 	}
