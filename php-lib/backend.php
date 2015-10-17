@@ -7,18 +7,14 @@ if(isset($_POST["create-route"])) {
 
 	$stmt = $database->prepare("INSERT INTO routes (owner_name, owner_mail, access_key, comment) "
 			. "VALUES (:owner_name, :owner_mail, :access_key, :comment)");
-	$stmt->bindParam(':owner_name', $route["ownername"]);
-	$stmt->bindParam(':owner_mail', $route["ownermail"]);
-	$stmt->bindParam(':comment', $route["comment"]);
+	$stmt->bindValue(':owner_name', $route->ownername);
+	$stmt->bindValue(':owner_mail', $route->ownermail);
+	$stmt->bindValue(':comment', $route->comment);
 	//TODO
-	$stmt->bindParam(':access_key', "TODO:ertkinzw8765ig");
+	$stmt->bindValue(':access_key', "TODO:ertkinzw8765ig");
 	$stmt->execute();
 
-
-	/*$query =  "SELECT * FROM combo_calcs WHERE options='easy'";
-	foreach ($dbh->query($query) as $row) {
-		echo $row[0];
-	}*/
+	echo $stmt->errorInfo()[2];
 } else if(isset($_GET["get-routes"])) {
 	$routes = array();
 	foreach ($database->query("SELECT * FROM routes") as $row) {
@@ -40,7 +36,9 @@ if(isset($_POST["create-route"])) {
 		}
 		$routes[] = $route;
 	}
-	echo json_encode($routes);
+	header('Content-Type: text/json');
+	header('Content-Disposition: attachment; filename="routes.json"');
+	echo json_encode($routes, JSON_PRETTY_PRINT);
 } else {
 	echo "Unknown request.";
 }

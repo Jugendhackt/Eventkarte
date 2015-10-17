@@ -31,10 +31,9 @@ function insertRoute() {
 	$.ajax({
       type: 'POST',
       data: { "create-route": JSON.stringify(route) } ,
-	  url: EVENTKARTE_LIB_URL + "/backend/backend.php",
+	  url: EVENTKARTE_LIB_URL + "/backend.php",
 	}).success(function( data ) {
-		alert("OK");
-		//TODO: OK
+		alert(data);
 	}).error(function( ) {
 		alert("Error");
 	});
