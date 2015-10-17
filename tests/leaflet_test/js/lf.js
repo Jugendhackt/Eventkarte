@@ -17,7 +17,7 @@ $(document).ready(function(){
 	var polylineAB = new L.polyline(posList, {
 
 		color: 'green',
-		weight: 2,
+		weight: 10,
 		opacity: 1,
 		smoothFactor: 1
 
@@ -26,7 +26,32 @@ $(document).ready(function(){
 	
 
 	$.getJSON( "js/data.json", function( data ) {
-		alert(data[0].comment);
+		
+		
+		var latC = data[0].segments[0].start.latitude;
+		var lngC = data[0].segments[0].start.longitude;
+		var PosC = new L.LatLng(latC, lngC);		
+		var markerC = L.marker(PosC).addTo(map);
+		markerC.bindPopup("Marker C");
+		
+		var latD = data[0].segments[0].end.latitude;
+		var lngD = data[0].segments[0].end.longitude;
+		var PosD = new L.LatLng(latD, lngD);			
+		var markerD = L.marker(PosD).addTo(map);
+		markerD.bindPopup("Marker D");
+
+		var posListCD = [PosC, PosD];
+
+		var polylineCD = new L.polyline(posListCD, {
+
+		color: 'pink',
+		weight: 10,
+		opacity: 1,
+		smoothFactor: 1
+
+		
+		});
+		polylineCD.addTo(map);
 	});
 	
 });
