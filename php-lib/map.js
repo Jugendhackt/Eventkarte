@@ -12,20 +12,27 @@ $(document).ready(function(){
 
 		var polylineAB = new L.polyline(posListAB, {
 			color: getSegmentColor(segment.type),
-			weight: 8,
+			weight: 9,
 			opacity: 1,
 			smoothFactor: 1
 		});
-		polylineAB.on('mousein', function(e) {
-    		this.weight=20;
-		});
+
 		polylineAB.addTo(map);
-		
-		polylineAB.bindPopup("<b>Name: </b>" + ownername + " (<a onclick=\"contact("+segment.id+",'"+ownername+"');\" href=\"#\">Kontakt</a>)<br><b>Freie Sitzpl\u00e4tze: </b>" + segment.free_seats + "<br><b>Bemerkung: </b>" + comment);
+		var popupMsg = "<b>Name: </b>" + ownername + " (<a onclick=\"contact("+segment.id+",'"+ownername+"');\" href=\"#\">Kontakt</a>)<br/>";
+		if(segment.free_seats!=0){
+			popupMsg += "<b>Freie Sitzpl\u00e4tze: </b>" + segment.free_seats + "<br/>";
+		}
+		popupMsg+="<b>Verkehrsmittel: </b>"+ getTransportString(segment.type) +"<br/>";
+		if(comment!= ""){
+			popupMsg += "<b>Bemerkung: </b>" + comment;
+		}
+
+		polylineAB.bindPopup(popupMsg);
 	}
 	function setMarkerForRoute(route){
 		var Pos = new L.LatLng(route.segments[0].start.latitude, route.segments[0].start.longitude);
 		var markerA = L.marker(Pos).addTo(map);
+		markerA.bindPopup(route.ownername + " (<a onclick=\"contact("+route.segments[0].id+",'"+route.ownername+"');\" href=\"#\">Kontakt</a>)");
 	}
 	function drawRoute(route){
 		var ownername = route.ownername
@@ -60,24 +67,38 @@ $(document).ready(function(){
 		switch(transportType){
 		case 0://car
 			return '#D4534E';
-			break;
 		case 1://train
 			return '#FFEE00';
-			break;
 		case 2://ship
 			return '#FF9800';
-			break;
 		case 3://bus
 			return '#CDDC39';
-			break;
 		case 4://bike
 			return '#8FB0DC';
-			break;
 		case 5://plane
 			return '#6CABDC';
-			break;
 		default://ufo
 			return '#E91E63';
+		}
+			
+	}
+	function getTransportString(transportType)
+	{
+		switch(transportType){
+		case 0://car
+			return "Auto";
+		case 1://train
+			return "Zug";
+		case 2://ship
+			return "Schiff";
+		case 3://bus
+			return "Bus";
+		case 4://bike
+			return "Fahrrad";
+		case 5://plane
+			return "Flugzeug";
+		default://ufo
+			return "UFO";
 		}
 			
 	}

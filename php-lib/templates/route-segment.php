@@ -7,17 +7,17 @@
 	<a onclick="addRouteSegment(this);" class="eventkarte-route-plus">+</a>
 	<div class="eventkarte-route-types">
 		<a onclick="choseType(this);" data-value="0" class="selected">
-			<img alt="Auto" src="<?php echo $_SESSION["EVENTKARTE_LIB_URL"]; ?>/icons/car.png" /></a>
+			<img alt="Auto" title="Auto" src="<?php echo $_SESSION["EVENTKARTE_LIB_URL"]; ?>/icons/car.png" /></a>
 		<a onclick="choseType(this);" data-value="1">
-			<img alt="Zug" src="<?php echo $_SESSION["EVENTKARTE_LIB_URL"]; ?>/icons/train.png" /></a>
+			<img alt="Zug" title="Zug" src="<?php echo $_SESSION["EVENTKARTE_LIB_URL"]; ?>/icons/train.png" /></a>
 		<a onclick="choseType(this);" data-value="2">
-			<img alt="Schiff" src="<?php echo $_SESSION["EVENTKARTE_LIB_URL"]; ?>/icons/ship.png" /></a>
+			<img alt="Schiff" title="Schiff" src="<?php echo $_SESSION["EVENTKARTE_LIB_URL"]; ?>/icons/ship.png" /></a>
 		<a onclick="choseType(this);" data-value="3">
-			<img alt="Bus" src="<?php echo $_SESSION["EVENTKARTE_LIB_URL"]; ?>/icons/bus.png" /></a>
+			<img alt="Bus" title="Bus" src="<?php echo $_SESSION["EVENTKARTE_LIB_URL"]; ?>/icons/bus.png" /></a>
 		<a onclick="choseType(this);" data-value="4">
-			<img alt="Fahrrad" src="<?php echo $_SESSION["EVENTKARTE_LIB_URL"]; ?>/icons/bicycle.png" /></a>
+			<img alt="Fahrrad" title="Fahrrad" src="<?php echo $_SESSION["EVENTKARTE_LIB_URL"]; ?>/icons/bicycle.png" /></a>
 		<a onclick="choseType(this);" data-value="5">
-			<img alt="Flugzeug" src="<?php echo $_SESSION["EVENTKARTE_LIB_URL"]; ?>/icons/aeroplane.png" /></a>
+			<img alt="Flugzeug" title="Flugzeug" src="<?php echo $_SESSION["EVENTKARTE_LIB_URL"]; ?>/icons/aeroplane.png" /></a>
 	</div>
 	<input onfocus="this.type='number' min="0" max="99" class="eventkarte-free-seats" placeholder="Freie Plätze" />
 </div>
