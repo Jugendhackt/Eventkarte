@@ -14,5 +14,5 @@ $_SESSION["EVENTKARTE_DB_PATH"] = EVENTKARTE_DB_PATH;
 
 include(EVENTKARTE_LIB_PATH . "/connect_db.php");
 
-include(EVENTKARTE_LIB_PATH . "/templates/base.html");
+include(EVENTKARTE_LIB_PATH . "/templates/base.php");
 
