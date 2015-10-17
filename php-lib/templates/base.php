@@ -1,12 +1,12 @@
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script src="<?php echo EVENTKARTE_LIB_URL; ?>/script.js"></script>
+
 <script>
 var EVENTKARTE_LIB_URL = "<?php echo EVENTKARTE_LIB_URL; ?>";
 var EVENTKARTE_EVENT_POSITION = {"latitude":"<?php echo explode('/', EVENTKARTE_EVENT_LOCATION)[0]; ?>",
 								"longitude":"<?php echo explode('/', EVENTKARTE_EVENT_LOCATION)[1]; ?>"};
 </script>
 <div id="eventkarte">
-	<div style="padding:20px;border:1px solid black;">Hier könnte Ihre Karte stehen...</div>
+	<div style="padding:20px;border:1px solid black;" id="map"></div>
 	<div>
 		<h2>Route eintragen</h2>
 		<form>
@@ -26,3 +26,4 @@ var EVENTKARTE_EVENT_POSITION = {"latitude":"<?php echo explode('/', EVENTKARTE_
 		</form>
 	</div>
 </div>
+<script src="<?php echo EVENTKARTE_LIB_URL; ?>/map.js"></script>

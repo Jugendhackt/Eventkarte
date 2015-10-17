@@ -1,7 +1,10 @@
 <html>
 	<head>
 		<title>Eventkarte</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 		<link rel="stylesheet" type="text/css" href="style.css">
+		<script src="http://cdn.leafletjs.com/leaflet-0.7.5/leaflet.js"></script>
+		<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.5/leaflet.css" />
 	</head>
 	<body>
 		<div id="header"><h1>Eventkarte</h1></div>
