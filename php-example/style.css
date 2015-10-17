@@ -40,6 +40,7 @@ h1 {
     background-color: #0078A8;
     transition: 0.3s all ease;
 	z-index: 2000;
+	text-transform: uppercase;
 }
 h1.scroll {
     padding: 10px 0px;
@@ -63,24 +64,26 @@ h2 {
 	color: white;
 	background-color: #0078A8;
 	text-decoration: none;
-	border-radius: 20px;
+	border-radius: 25px;
 	display: inline-block;
-	padding: 3px 8px;
+	padding: 3px 10px;
+	padding-bottom: 5px;
 	font-weight: bold;
 	cursor: pointer;
 }
 .eventkarte-route-type > input {
 	width: 100px;
 }
-input {
-	margin-bottom: 5px;
-}
 input, textarea {
 	padding: 5px;
 	border: 1px solid #bbb;
+	margin-bottom: 5px;
 }
 input:focus, textarea:focus {
 	border: 1px solid #0078A8;
+}
+.eventkarte-route-location input {
+	margin-bottom: 0px;
 }
 #eventkarte-comment {
 	display: block;

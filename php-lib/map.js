@@ -34,10 +34,10 @@ $(document).ready(function(){
 			drawSegment(value, ownername, comment, first)
 		});
 	}
-	var map = L.map('map').setView([EVENTKARTE_EVENT_POSITION.latitude, EVENTKARTE_EVENT_POSITION.longitude], 8);
+	var map = L.map('map').setView([EVENTKARTE_EVENT_POSITION.latitude, EVENTKARTE_EVENT_POSITION.longitude], 7);
 
 	// create the tile layer with correct attribution
-	var OpenStreetMap_Mapnik = L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 19, attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>' }).addTo(map);
+	var OpenStreetMap_Mapnik = L.tileLayer('http://{s}.tile.openstreetmap.se/hydda/full/{z}/{x}/{y}.png', { maxZoom: 15, attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>' }).addTo(map);
 	//Zielpunkt	
 	L.marker([EVENTKARTE_EVENT_POSITION.latitude, EVENTKARTE_EVENT_POSITION.longitude]).addTo(map);
 	$.getJSON( EVENTKARTE_LIB_URL + "/backend.php?get-routes", function( data ) {
