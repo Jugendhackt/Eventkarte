@@ -88,10 +88,12 @@ input {
 }
 #eventkarte-submit {
 	margin-top: 20px;
+	margin-bottom: 100px;
 	display: inline-block;
 	width: 505px;
 }
 div#map {
+	margin: 0px auto;
 	margin-bottom: 20px;
 	width: 800px;
 	height: 400px;

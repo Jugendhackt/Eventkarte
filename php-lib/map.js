@@ -35,12 +35,12 @@ $(document).ready(function(){
 			drawSegment(value, ownername, comment)
 		});
 	}
-	var map = L.map('map').setView([51.5, -0.09], 15);
+	var map = L.map('map').setView([EVENTKARTE_EVENT_POSITION.latitude, EVENTKARTE_EVENT_POSITION.longitude], 8);
 
 	// create the tile layer with correct attribution
 	var OpenStreetMap_Mapnik = L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 19, attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>' }).addTo(map);
 
-	$.getJSON( "http://127.0.0.1/Eventkarte/php-lib/backend.php?get-routes", function( data ) {
+	$.getJSON( EVENTKARTE_LIB_URL + "/backend.php?get-routes", function( data ) {
 		//alert(data);
 		$.each(data,function(index,value){
 				console.log(value);
