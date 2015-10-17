@@ -2,10 +2,28 @@ function addRouteSegment(el) {
 	var a = $("<div class=\"eventkarte-route-segment\"/>");
 	a.insertAfter($(el).parent());
 	a.load(EVENTKARTE_LIB_URL + "/templates/route-segment.php");
-	return false; // Suppress onClick
 }
 function insertRoute() {
 	checkLocations();
+
+	var isValid = true;
+	$("input.eventkarte-location").each(function( index ) {
+		var el = $(this);
+		if($(el).attr("id") == "eventkarte-location-destination") {
+			return;
+		}
+		if($(el).val() != $(el).data("last-check")) {
+			isValid = false;
+		}
+		if($(el).data("latitude") == "") {
+			isValid = false;
+		}
+	});
+	if(!isValid) {
+		alert("Felder ausfüllen");
+		return;
+	}
+
 	//TODO: Validation
 
 	var route = {};
@@ -90,4 +108,15 @@ function checkLocations() {
 $(document).ready(function() {
     setInterval(checkLocations, 2000);
 });
+
+$(window).scroll(function() {
+    var scroll = $(window).scrollTop();
+
+    if (scroll >= 20) {
+        $('h1').addClass('scroll');
+    } else {
+        $('h1').removeClass('scroll');
+    }
+});
+
 
