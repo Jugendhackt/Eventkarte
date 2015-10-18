@@ -155,13 +155,13 @@ div#map {
 	color: white;
 	font-size: 120%;
 }
-#contact {
+#eventkarte-contact {
 	margin-top: 50px;
 }
-#contact input,#contact textarea {
+#eventkarte-contact input,#eventkarte-contact textarea {
 	width: 100%;
 }
-#contact textarea {
+#eventkarte-contact textarea {
 	height: 120px;
 }
 #eventkarte-location-time {

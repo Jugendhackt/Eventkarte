@@ -1,9 +1,5 @@
 var map = {}
 var OpenStreetMap = {}
-function createMap()
-{
-	
-}
 function drawSegment(segment, ownername, comment)
 {
 	var PosA = new L.LatLng(segment.start.latitude, segment.start.longitude);
