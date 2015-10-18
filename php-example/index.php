@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 	<head>
 		<title>Eventkarte</title>
@@ -5,6 +6,7 @@
 		<link rel="stylesheet" type="text/css" href="style.css">
 		<script src="http://cdn.leafletjs.com/leaflet-0.7.5/leaflet.js"></script>
 		<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.5/leaflet.css" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	</head>
 	<body>
 		<div id="header"><h1>Eventkarte</h1></div>
