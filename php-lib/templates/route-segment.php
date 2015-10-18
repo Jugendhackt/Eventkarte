@@ -1,6 +1,7 @@
 <?php @session_start();?>
 <div class="eventkarte-route-location">
 	<input class="eventkarte-location" placeholder="Ort" />
+	<a onclick="removeRouteSegment(this);" class="eventkarte-route-minus">✘</a>
 	<input class="eventkarte-time" placeholder="Zeit"/>
 </div>
 <div class="eventkarte-route-type">
@@ -19,5 +20,5 @@
 		<a onclick="choseType(this);" data-value="5">
 			<img alt="Flugzeug" title="Flugzeug" src="<?php echo $_SESSION["EVENTKARTE_LIB_URL"]; ?>/icons/aeroplane.png" /></a>
 	</div>
-	<input onfocus="this.type='number' min="0" max="99" class="eventkarte-free-seats" placeholder="Freie Plätze" />
+	<input onfocus="this.type='number' min="0" max="99" class="eventkarte-free-seats" placeholder="Plätze frei" />
 </div>

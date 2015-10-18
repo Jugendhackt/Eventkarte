@@ -1,9 +1,18 @@
 function addRouteSegment(el) {
 	var a = $("<div class=\"eventkarte-route-segment\"/>");
-	a.insertAfter($(el).parent());
+	a.insertAfter($(el).parent().parent());
 	a.load(EVENTKARTE_LIB_URL + "/templates/route-segment.php", function(){
 		$(a).hide(0).show(500);
 	});
+}
+function removeRouteSegment(el) {
+	if($(".eventkarte-route-segment").length > 1) {
+		$(el).parent().parent().hide(500, function() {
+			$(el).parent().parent().remove();
+		});
+	} else {
+		alert("Das letzte Routenstück kann nicht gelöscht werden");
+	}
 }
 function choseType(el) {
 	$(el).parent().find("a").removeClass("selected");
@@ -25,12 +34,13 @@ function insertRoute() {
 			isValid = false;
 		}
 	});
+	if($("#eventkarte-ownermail").val() == "" || $("#eventkarte-ownername").val() == "") {
+		isValid = false;
+	} 
 	if(!isValid) {
 		alert("Felder ausfüllen");
 		return;
 	}
-
-	//TODO: Validation
 
 	var route = {};
 	route.ownermail = $("#eventkarte-ownermail").val();
@@ -118,9 +128,9 @@ function checkLocations() {
 function contact(segment_id, name) {
 	$("#eventkarte-mail-receiver").text(name);
 	$("#eventkarte-receiver_segment").val(segment_id);
-	$("#contact").show(1500);
+	$("#eventkarte-contact").show(1500);
 	$('html, body').animate({
-        scrollTop: $("#contact").offset().top
+        scrollTop: $("#eventkarte-contact").offset().top
     }, 1500);
 }
 
@@ -139,7 +149,7 @@ function sendMail() {
 	}).success(function( data ) {
 		if(data=="") {
 			alert("Gesendet");
-			$("#contact").hide(500);
+			$("#eventkarte-contact").hide(500);
 		} else {
 			alert(data);
 		}
