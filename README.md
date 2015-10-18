@@ -6,5 +6,5 @@ Besucher einer Veranstaltung können sich vor der Anreise auf einer interaktiven
 
 Für Veranstalter ist die Karte besonders einfach in die eigene Homepage integrierbar und ist somit komplett dezentral verwaltet und individuell anpassbar.
 
-![Screenshot](https://raw.githubusercontent.com/Jugendhackt/Eventkarte/master/screenshot_main.png)
-![Screenshot](https://raw.githubusercontent.com/Jugendhackt/Eventkarte/master/screenshot_contact.png)
+![Screenshot](https://raw.githubusercontent.com/Jugendhackt/Eventkarte/master/screenshot.png)
+
