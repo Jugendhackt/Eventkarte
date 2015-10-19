@@ -2,7 +2,7 @@
 <div class="eventkarte-route-location">
 	<input class="eventkarte-location" placeholder="Ort" />
 	<a onclick="removeRouteSegment(this);" class="eventkarte-route-minus">✘</a>
-        <input class="eventkarte-time" placeholder="Zeit" type="time"/>
+        <input class="eventkarte-time" placeholder="Zeit"/>
 </div>
 <div class="eventkarte-route-type">
 	<a onclick="addRouteSegment(this);" class="eventkarte-route-plus">+</a>

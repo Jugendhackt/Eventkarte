@@ -3,7 +3,7 @@
     padding: 0px;
     font-family: "Verdana", Helvetica, sans-serif;
     color: #2B2B2B;
-	box-sizing: border-box;
+    box-sizing: border-box;
 }
 body {
     max-width: 1000px;
@@ -11,7 +11,7 @@ body {
     padding: 10px;
     overflow-y: scroll;
     padding-top: 20px;
-	padding-bottom: 100px;
+    padding-bottom: 100px;
 }
 html {
     background: #f8f8ff;
@@ -22,7 +22,6 @@ h1 {
     margin:0px auto;
     text-align: left;
     color: #E2E2E2;
-    text-decoration: ;
     border-bottom: 1px solid #cccccc;
     position: fixed;
     padding: 15px 0px;
@@ -36,135 +35,136 @@ h1 {
     font-family: "Verdana", Helvetica, Arial, sans-serif;
     background-color: #0078A8;
     transition: 0.3s all ease;
-	z-index: 2000;
-	text-transform: uppercase;
+    z-index: 2000;
+    text-transform: uppercase;
 }
 h1.scroll {
     padding: 10px 0px;
     font-size: 30px;
 }
 h2 {
-	margin: 15px 0px;
-	text-align: center;
+    margin: 15px 0px;
+    text-align: center;
 }
 #content {
     margin-top: 90px;
 }
 .eventkarte-route-types{
-	border-left: 4px solid #0078A8;
-	display: inline-block;
-	padding: 15px 5px;
+    border-left: 4px solid #0078A8;
+    display: inline-block;
+    padding: 15px 5px;
 }
 .eventkarte-route-type{
-	margin-left: 16px;
+    margin-left: 16px;
 }
 .eventkarte-route-plus, .eventkarte-route-minus{
-	color: white;
-	background-color: #0078A8;
-	text-decoration: none;
-	border-radius: 25px;
-	display: inline-block;
-	padding: 3px 10px 5px;
-	font-weight: bold;
-	cursor: pointer;
-	vertical-align: top;
+    color: white;
+    background-color: #0078A8;
+    text-decoration: none;
+    border-radius: 25px;
+    display: inline-block;
+    padding: 3px 10px 5px;
+    font-weight: bold;
+    cursor: pointer;
+    vertical-align: top;
 }
 .eventkarte-route-plus {
-	margin-top: 26px;
+    margin-top: 26px;
 }
 .eventkarte-route-minus {
-	float: right;
-	margin-left: 5px;
-	padding: 4px 7px 3px;
+    float: right;
+    margin-left: 5px;
+    padding: 4px 7px 3px;
 }
 .eventkarte-route-type > input {
-	width: 80px;
-	display: inline-block;
-	vertical-align: top;
-	margin-top: 22px;
+    width: 110px;
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 22px;
+    margin-left: 10px;
 }
 input, textarea {
-	padding: 5px;
-	background: #fff;
-	border: 1px solid #bbb;
-	margin-bottom: 5px;
+    padding: 5px;
+    background: #fff;
+    border: 1px solid #bbb;
+    margin-bottom: 5px;
 }
 input:focus, textarea:focus {
-	border: 1px solid #0078A8;
+    border: 1px solid #0078A8;
 }
 .eventkarte-route-location input {
-	margin-bottom: 0px;
+    margin-bottom: 0px;
 }
 #eventkarte-comment {
-	display: block;
-	margin: 0px auto;
-	margin-bottom: 20px;
-	width: 100%;
+    display: block;
+    margin: 0px auto;
+    margin-bottom: 20px;
+    width: 100%;
 }
 #eventkarte-submit {
-	margin-top: 20px;
-	display: inline-block;
-	width: 100%;
-	cursor:pointer;
+    margin-top: 20px;
+    display: inline-block;
+    width: 100%;
+    cursor:pointer;
 }
 div#map {
-	margin: 0px auto;
-	margin-bottom: 20px;
-	width: 700px;
-	height: 350px;
-	max-width: 100%;
-	border: 1px solid #0078A8;
+    margin: 0px auto;
+    margin-bottom: 20px;
+    width: 700px;
+    height: 350px;
+    max-width: 100%;
+    border: 1px solid #0078A8;
 }
 #eventkarte form{
-	width: 500px;
-	max-width: 100%;
-	margin: 0px auto;
+    width: 500px;
+    max-width: 100%;
+    margin: 0px auto;
 }
 .eventkarte-location {
-	width: 70%;
-	width: -moz-calc(100% - 115px);
-	width: -webkit-calc(100% - 115px);
-	width: calc(100% - 115px);
+    width: 70%;
+    width: -moz-calc(100% - 115px);
+    width: -webkit-calc(100% - 115px);
+    width: calc(100% - 115px);
 }
 .eventkarte-time {
-	float: right;
-	width: 80px;
+    float: right;
+    width: 80px;
 }
 #eventkarte-ownername, #eventkarte-ownermail {
-	width: 49.5%;
+    width: 49.3%;
 }
 .eventkarte-route-types a {
-	text-decoration: none;
-	display: inline-block;
-	cursor: pointer;
-	padding: 2px;
-	border: 2px solid transparent;
-	transition: 0.2s all ease-in-out;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    padding: 2px;
+    border: 2px solid transparent;
+    transition: 0.2s all ease-in-out;
 }
 .eventkarte-route-types a img {
-	width: 38px;
-	height: 38px;
+    width: 38px;
+    height: 38px;
 }
 .eventkarte-route-types a.selected {
-	border: 2px solid #0078A8;
+    border: 2px solid #0078A8;
 }
 #eventkarte-submit {
-	background: #0078A8;
-	border: none;
-	padding: 10px;
-	color: white;
-	font-size: 120%;
+    background: #0078A8;
+    border: none;
+    padding: 10px;
+    color: white;
+    font-size: 120%;
 }
 #eventkarte-contact {
-	margin-top: 50px;
+    margin-top: 50px;
 }
 #eventkarte-contact input,#eventkarte-contact textarea {
-	width: 100%;
+    width: 100%;
 }
 #eventkarte-contact textarea {
-	height: 120px;
+    height: 120px;
 }
 #eventkarte-location-time {
-	margin-right: 30px;
+    margin-right: 30px;
 }
 

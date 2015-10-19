@@ -1,14 +1,12 @@
-
-	
 $(document).ready(function(){
 
 	function drawSegment(segment, ownername, comment)
 	{
-		var PosA = new L.LatLng(segment.start.latitude, segment.start.longitude);		
+		var PosA = new L.LatLng(segment.start.latitude, segment.start.longitude);
 		var markerA = L.marker(PosA).addTo(map);
 
 
-		var PosB = new L.LatLng(segment.end.latitude, segment.end.longitude);			
+		var PosB = new L.LatLng(segment.end.latitude, segment.end.longitude);
 		var markerB = L.marker(PosB).addTo(map);
 
 
@@ -22,9 +20,8 @@ $(document).ready(function(){
 			smoothFactor: 1
 		});
 		polylineAB.addTo(map);
-		
+
 		polylineAB.bindPopup("<b>Name: </b>" + ownername + "<br><b>Freie Sitzpl\u00e4tze: </b>" + segment.free_seats + "<br><b>Bemerkung: </b>" + comment);
-		
 
 	}
 	function drawRoute(route){
@@ -45,8 +42,8 @@ $(document).ready(function(){
 		$.each(data,function(index,value){
 				console.log(value);
 				drawRoute(value)
-		});		
-		
+		});
+
 	});
 	function getSegmentColor(transportType)
 	{
@@ -72,8 +69,6 @@ $(document).ready(function(){
 		default://ufo
 			return '#E91E63';
 		}
-			
 	}
-	
 });
 

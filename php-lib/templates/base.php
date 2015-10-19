@@ -2,6 +2,7 @@
 
 <script>
 var EVENTKARTE_LIB_URL = "<?php echo EVENTKARTE_LIB_URL; ?>";
+var EVENTKARTE_EVENT_NAME = "<?php echo EVENTKARTE_EVENT_NAME; ?>";
 var EVENTKARTE_EVENT_POSITION = {"latitude":"<?php echo explode('/', EVENTKARTE_EVENT_LOCATION)[0]; ?>",
 								"longitude":"<?php echo explode('/', EVENTKARTE_EVENT_LOCATION)[1]; ?>"};
 </script>
@@ -19,8 +20,8 @@ var EVENTKARTE_EVENT_POSITION = {"latitude":"<?php echo explode('/', EVENTKARTE_
 			</div>
 
 			<div class="eventkarte-route-location" id="eventkarte-route-destination">
-				<input id="eventkarte-location-destination" class="eventkarte-location" placeholder="Ort" value="Jugend Hackt" disabled/>
-                                <input id="eventkarte-location-time" class="eventkarte-time" placeholder="Zeit" type="time"/>
+				<input id="eventkarte-location-destination" class="eventkarte-location" placeholder="Ort" value="<?php echo EVENTKARTE_EVENT_NAME; ?>" disabled/>
+                                <input id="eventkarte-location-time" class="eventkarte-time" placeholder="Zeit"/>
 			</div>
 			<input id="eventkarte-submit" type="button" value="Einstellen" onclick="insertRoute();" />
 		</form>
