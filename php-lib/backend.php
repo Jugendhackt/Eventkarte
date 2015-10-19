@@ -63,16 +63,20 @@ if(isset($_POST["create-route"])) {
 	$rows = $stmt->fetchAll();
 	header('Content-Type: text/json');
 	header('Content-Disposition: attachment; filename="gps.json"');
-	echo json_encode($rows[0], JSON_PRETTY_PRINT);
+	echo json_encode($rows[0]);
 } else if(isset($_POST["sendmail"])) {
 	$stmt = $database->query("select * from route_segments,routes where route_segments.id == '".(int)$_POST["sendmail"]."' AND routes.id == route_segments.route_id");
 	$stmt->execute();
 	$rows = $stmt->fetchAll();
 
 	$empfaenger = $rows[0]["owner_mail"];
-	$nachricht = $_POST["text"];
+        $nachricht = "Hallo ".$rows[0]["owner_name"].", \n\nDer Nutzer \"".$_POST["sender_name"]
+                ."\" hat Dir über die Eventkarte von \"".$_SESSION["EVENTKARTE_EVENT_NAME"]
+                ."\" folgende Nachricht gesendet:\n\n==================\n\n";
+	$nachricht .= $_POST["text"];
 	$header = 'From: system@jugendhackt.de' . "\r\n" .
-		'Reply-To: '. $_POST["sender_mail"];
+		'Reply-To: '. $_POST["sender_mail"]. "\r\n" .
+		'Content-Type: text/plain;charset=utf-8';
 	$result = mail($empfaenger, "Kontaktanfrage von ".$_POST["sender_name"]." (Eventkarte)", $nachricht, $header);
 	if(!$result) {
 		echo "Sending failed";

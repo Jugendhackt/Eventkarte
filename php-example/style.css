@@ -21,7 +21,7 @@ html {
 h1 {
     margin:0px auto;
     text-align: left;
-    color: #E2E2E2;
+    color: #f8f8ff;
     border-bottom: 1px solid #cccccc;
     position: fixed;
     padding: 15px 0px;
@@ -54,19 +54,12 @@ h2 {
     display: inline-block;
     padding: 15px 5px;
 }
+.eventkarte-route-plus img, .eventkarte-route-minus img{
+    width: 25px;
+    cursor: pointer;
+}
 .eventkarte-route-type{
     margin-left: 16px;
-}
-.eventkarte-route-plus, .eventkarte-route-minus{
-    color: white;
-    background-color: #0078A8;
-    text-decoration: none;
-    border-radius: 25px;
-    display: inline-block;
-    padding: 3px 10px 5px;
-    font-weight: bold;
-    cursor: pointer;
-    vertical-align: top;
 }
 .eventkarte-route-plus {
     margin-top: 26px;
@@ -74,7 +67,6 @@ h2 {
 .eventkarte-route-minus {
     float: right;
     margin-left: 5px;
-    padding: 4px 7px 3px;
 }
 .eventkarte-route-type > input {
     width: 110px;
@@ -142,8 +134,8 @@ div#map {
     transition: 0.2s all ease-in-out;
 }
 .eventkarte-route-types a img {
-    width: 38px;
-    height: 38px;
+    width: 30px;
+    height: 30px;
 }
 .eventkarte-route-types a.selected {
     border: 2px solid #0078A8;

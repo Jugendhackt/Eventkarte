@@ -37,7 +37,7 @@ function formIsValid() {
     }
     return isValid;
 }
-function generateSegment(el) {
+function generateSegment(el, index) {
     var segment = {};
     segment.freeseats = $(el).find(".eventkarte-free-seats").val();
     segment.type = $(el).find(".eventkarte-route-type a.selected").data("value");
@@ -72,7 +72,7 @@ function insertRoute() {
     route.segments  = Array();
 
     $(".eventkarte-route-segment").each(function( index ) {
-        var segment = generateSegment(this);
+        var segment = generateSegment(this, index);
         route.segments.push(segment);
     });
 
@@ -154,6 +154,8 @@ function checkLocations() {
 function contact(segment_id, name) {
     $("#eventkarte-mail-receiver").text(name);
     $("#eventkarte-receiver_segment").val(segment_id);
+    $("#eventkarte-contact input").val("");
+    $("#eventkarte-contact textarea").val("");
     $("#eventkarte-contact").show(1500);
     $('html, body').animate({
         scrollTop: $("#eventkarte-contact").offset().top
@@ -165,7 +167,7 @@ function sendMail() {
     post.sendmail = $("#eventkarte-receiver_segment").val();
     post.sender_mail = $("#eventkarte-sendermail").val();
     post.sender_name = $("#eventkarte-sendername").val();
-    post.text = $("#contact textarea").val();
+    post.text = $("#eventkarte-contact textarea").val();
 
     $.ajax({
         type: 'POST',
