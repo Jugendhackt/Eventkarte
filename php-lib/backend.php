@@ -53,17 +53,6 @@ if(isset($_POST["create-route"])) {
 	header('Content-Type: text/json');
 	header('Content-Disposition: attachment; filename="routes.json"');
 	echo json_encode($routes, JSON_PRETTY_PRINT);
-} else if(isset($_GET["get-gps"])) {
-	$city_name = str_replace("'", "", $_GET["get-gps"]);
-	$city_name = strtolower($city_name);
-	$dir = 'sqlite:geonames/geonames.db';
-	$geodatabase = new PDO($dir) or die("cannot open the database");
-	$stmt = $geodatabase->query("select * from geonames where lower(name) == '$city_name'");
-	$stmt->execute();
-	$rows = $stmt->fetchAll();
-	header('Content-Type: text/json');
-	header('Content-Disposition: attachment; filename="gps.json"');
-	echo json_encode($rows[0]);
 } else if(isset($_POST["sendmail"])) {
 	$stmt = $database->query("select * from route_segments,routes where route_segments.id == '".(int)$_POST["sendmail"]."' AND routes.id == route_segments.route_id");
 	$stmt->execute();

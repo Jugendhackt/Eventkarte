@@ -127,17 +127,30 @@ function checkLocation(el) {
         // Do not check again
         return;
     }
+    var townName = $(el).val();
+    if(townName == "") {
+        $(el).css("background", "#fff");
+        return;
+    }
     $.ajax({
         type: 'GET',
         async: false,
-        data: { "get-gps": $(el).val() } ,
-        url: EVENTKARTE_LIB_URL + "/backend.php"
+        url: "http://nominatim.openstreetmap.org/search/" 
+                + encodeURI(townName) + "?format=json"
     }).success(function( data ) {
-        $(el).data("latitude", data.lat);
-        $(el).data("longitude", data.lon);
-        $(el).data("last-check", $(el).val());
-        $(el).css("background","#aaffaa");
-        showMarker(data.lat, data.lon, data.name);
+        if(data[0] == undefined) {
+            removeTempMarkers();
+            $(el).data("latitude", "");
+            $(el).data("longitude", "");
+            $(el).data("last-check", $(el).val());
+            $(el).css("background", "#faa");
+        } else {
+            $(el).data("latitude", data[0].lat);
+            $(el).data("longitude", data[0].lon);
+            $(el).data("last-check", $(el).val());
+            $(el).css("background","#aaffaa");
+            showMarker(data[0].lat, data[0].lon, data[0].display_name);
+        }
     }).error(function( ) {
         removeTempMarkers();
         $(el).data("latitude", "");
