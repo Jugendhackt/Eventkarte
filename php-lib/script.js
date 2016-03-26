@@ -35,6 +35,9 @@ function formIsValid() {
     if($("#eventkarte-ownermail").val() == "" || $("#eventkarte-ownername").val() == "") {
         isValid = false;
     }
+    if (console.log($("#eventkarte-ownermail").val().indexOf("@")) < 0 || console.log($("#eventkarte-ownermail").val().indexOf(".")) < 0) {
+        isValid = false;
+    }
     return isValid;
 }
 function generateSegment(el, index) {
