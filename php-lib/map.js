@@ -29,7 +29,13 @@ function makePopupString(segment,ownername,comment) {
 }
 function setMarkerForRoute(route) {
     var Pos = new L.LatLng(route.segments[0].start.latitude, route.segments[0].start.longitude);
-    var markerA = L.marker(Pos).addTo(map);
+    var targetIcon = L.icon({
+        iconUrl: EVENTKARTE_LIB_URL + '/icons/marker-icon-red.png',
+        shadowUrl: "http://cdn.leafletjs.com/leaflet-0.7.5/images/marker-shadow.png",
+        iconAnchor: [14, 41],
+        popupAnchor: [0, -33]
+    });
+    var markerA = L.marker(Pos, {icon: targetIcon}).addTo(map);
     markerA.bindPopup(route.ownername + " (<a onclick=\"contact("+route.segments[0].id+",'"+route.ownername+"');\" href=\"#\">Kontakt</a>)");
 }
 function drawRoute(route) {
