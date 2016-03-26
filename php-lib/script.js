@@ -170,7 +170,8 @@ function checkLocations() {
 function contact(segment_id, name) {
     $("#eventkarte-mail-receiver").text(name);
     $("#eventkarte-receiver_segment").val(segment_id);
-    $("#eventkarte-contact input").val("");
+    $("eventkarte-sendername").val("");
+    $("eventkarte-sendermail").val("");
     $("#eventkarte-contact textarea").val("");
     $("#eventkarte-contact").show(500);
 }
