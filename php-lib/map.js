@@ -30,7 +30,7 @@ function makePopupString(segment,ownername,comment) {
 function setMarkerForRoute(route) {
     var Pos = new L.LatLng(route.segments[0].start.latitude, route.segments[0].start.longitude);
     var targetIcon = L.icon({
-        iconUrl: './php-lib/icons/marker-icon-red.png',
+        iconUrl: './icons/marker-icon-red.png',
         shadowUrl: "http://cdn.leafletjs.com/leaflet-0.7.5/images/marker-shadow.png",
         iconAnchor: [14, 41],
         popupAnchor: [0, -33]

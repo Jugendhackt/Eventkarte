@@ -81,7 +81,7 @@ function insertRoute() {
     $.ajax({
         type: 'POST',
         data: {"create-route": JSON.stringify(route)},
-        url: EVENTKARTE_LIB_URL + "/backend.php"
+        url: "php-lib/backend.php"
     }).success(function( data ) {
         if(data != "") {
             alert(data);
@@ -111,7 +111,7 @@ function showMarker(lat, lon, name) {
     map.panTo([lat,lon], {animate:true, duration:1});
     setTimeout(function() {
         var grayIcon = L.icon({
-            iconUrl: 'php-lib/icons/marker-icon-gray.png',
+            iconUrl: './icons/marker-icon-gray.png',
             shadowUrl: "http://cdn.leafletjs.com/leaflet-0.7.5/images/marker-shadow.png",
             iconAnchor: [14, 41],
             popupAnchor: [0, -33]
@@ -186,7 +186,7 @@ function sendMail() {
         type: 'POST',
         async: false,
         data: post ,
-        url: EVENTKARTE_LIB_URL + "/backend.php"
+        url: "php-lib/backend.php"
     }).success(function( data ) {
         if(data=="") {
             alert("Gesendet");

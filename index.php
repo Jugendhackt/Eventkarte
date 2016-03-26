@@ -14,19 +14,12 @@
         <h1>Eventkarte</h1>
         <div id="content">
             <?php
-            define("EVENTKARTE_DB_PATH", realpath(dirname(__FILE__)) . "/eventkarte.db");
-            define("EVENTKARTE_LIB_URL", "http://localhost/Eventkarte/php-lib");
-            define("EVENTKARTE_EVENT_ICON", realpath(dirname(__FILE__)) . "/icon.png");
-            define("EVENTKARTE_EVENT_LOCATION", "52.5166667/13.4");
-            define("EVENTKARTE_EVENT_NAME", "Jugend Hackt");
             include("connect_db.php");
+            include("constants.php");
             ?>
-
             <script>
-            var EVENTKARTE_LIB_URL = "<?php echo EVENTKARTE_LIB_URL; ?>";
             var EVENTKARTE_EVENT_NAME = "<?php echo EVENTKARTE_EVENT_NAME; ?>";
-            var EVENTKARTE_EVENT_POSITION = {"latitude":"<?php echo explode('/', EVENTKARTE_EVENT_LOCATION)[0]; ?>",
-								            "longitude":"<?php echo explode('/', EVENTKARTE_EVENT_LOCATION)[1]; ?>"};
+            var EVENTKARTE_EVENT_POSITION = {"latitude":"52.5166667", "longitude":"13.4"};
             </script>
             <div id="eventkarte">
 	            <div>

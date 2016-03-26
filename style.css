@@ -39,6 +39,7 @@ body, html {
     right:0px;
     left:500px;
     box-sizing: border-box;
+    border-left: 1px solid #ccc;
 }
 :focus {outline:none;}
 ::-moz-focus-inner {border:0;}

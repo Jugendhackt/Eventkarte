@@ -1,6 +1,6 @@
 <?php
-session_start();
 include("../connect_db.php");
+include("../constants.php");
 
 if(isset($_POST["create-route"])) {
 	$route = json_decode($_POST["create-route"]);
@@ -60,7 +60,7 @@ if(isset($_POST["create-route"])) {
 
 	$empfaenger = $rows[0]["owner_mail"];
         $nachricht = "Hallo ".$rows[0]["owner_name"].", \n\nDer Nutzer \"".$_POST["sender_name"]
-                ."\" hat Dir über die Eventkarte von \"".$_SESSION["EVENTKARTE_EVENT_NAME"]
+                ."\" hat Dir über die Eventkarte von \"".EVENTKARTE_EVENT_NAME
                 ."\" folgende Nachricht gesendet:\n\n==================\n\n";
 	$nachricht .= $_POST["text"];
 	$header = 'From: system@jugendhackt.de' . "\r\n" .

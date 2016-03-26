@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-$my_img = imageCreateFromPng("./icons/marker-icon-red-empty.png");
+$my_img = imageCreateFromPng("../icons/marker-icon-red-empty.png");
 imageAlphaBlending($my_img, true);
 imageSaveAlpha($my_img, true);
 
