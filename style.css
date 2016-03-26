@@ -88,11 +88,16 @@ input:focus, textarea:focus {
     margin-bottom: 20px;
     width: 100%;
 }
-#eventkarte-submit {
+.eventkarte-submit {
     margin-top: 20px;
     display: inline-block;
     width: 100%;
     cursor:pointer;
+    background: #0078A8;
+    border: none;
+    padding: 10px;
+    color: white;
+    font-size: 120%;
 }
 #eventkarte form{
     width: 500px;
@@ -126,13 +131,6 @@ input:focus, textarea:focus {
 }
 .eventkarte-route-types a.selected {
     border: 2px solid #0078A8;
-}
-#eventkarte-submit {
-    background: #0078A8;
-    border: none;
-    padding: 10px;
-    color: white;
-    font-size: 120%;
 }
 #eventkarte-contact {
     margin-top: 10px;

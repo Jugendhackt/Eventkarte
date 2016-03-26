@@ -37,7 +37,7 @@
 				            <input id="eventkarte-location-destination" class="eventkarte-location" placeholder="Ort" value="<?php echo EVENTKARTE_EVENT_NAME; ?>" disabled/>
                                             <input id="eventkarte-location-time" class="eventkarte-time" placeholder="Zeit"/>
 			            </div>
-			            <input id="eventkarte-submit" type="button" value="Einstellen" onclick="insertRoute();" />
+			            <input class="eventkarte-submit" type="button" value="Einstellen" onclick="insertRoute();" />
 		            </form>
 	            </div>
 	            <div id="eventkarte-contact" style="display:none;">
@@ -47,7 +47,7 @@
 			            <input placeholder="E-Mail" id="eventkarte-sendermail" />
 			            <input type="hidden" id="eventkarte-receiver_segment" />
 			            <textarea placeholder="Nachricht" id="eventkarte-message"></textarea>
-			            <input id="eventkarte-submit" type="button" value="Senden" onclick="sendMail();" />
+			            <input class="eventkarte-submit" type="button" value="Senden" onclick="sendMail();" />
 		            </form>
 	            </div>
             </div>

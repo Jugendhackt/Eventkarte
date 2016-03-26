@@ -32,10 +32,10 @@ function formIsValid() {
             isValid = false;
         }
     });
-    if($("#eventkarte-ownermail").val() == "" || $("#eventkarte-ownername").val() == "") {
+    if($("#eventkarte-ownername").val() == "") {
         isValid = false;
     }
-    if (console.log($("#eventkarte-ownermail").val().indexOf("@")) < 0 || console.log($("#eventkarte-ownermail").val().indexOf(".")) < 0) {
+    if (/^([a-zA-Z0-9]+@[a-zA-Z0-9]+.[a-zA-Z0-9]+)$/.test($("#eventkarte-ownermail"))) {
         isValid = false;
     }
     return isValid;
@@ -173,9 +173,6 @@ function contact(segment_id, name) {
     $("#eventkarte-contact input").val("");
     $("#eventkarte-contact textarea").val("");
     $("#eventkarte-contact").show(500);
-    $('html, body').animate({
-        scrollTop: $("#eventkarte-contact").offset().top
-    }, 1500);
 }
 
 function sendMail() {
