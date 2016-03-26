@@ -30,7 +30,7 @@ function makePopupString(segment,ownername,comment) {
 function setMarkerForRoute(route) {
     var Pos = new L.LatLng(route.segments[0].start.latitude, route.segments[0].start.longitude);
     var targetIcon = L.icon({
-        iconUrl: EVENTKARTE_LIB_URL + '/icons/marker-icon-red.png',
+        iconUrl: './php-lib/icons/marker-icon-red.png',
         shadowUrl: "http://cdn.leafletjs.com/leaflet-0.7.5/images/marker-shadow.png",
         iconAnchor: [14, 41],
         popupAnchor: [0, -33]
@@ -88,14 +88,14 @@ $(document).ready(function() {
     OpenStreetMap = L.tileLayer('http://{s}.tile.openstreetmap.se/hydda/full/{z}/{x}/{y}.png', { maxZoom: 15, minZoom: 5, attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>' }).addTo(map);
     //Zielpunkt
     var targetIcon = L.icon({
-        iconUrl: EVENTKARTE_LIB_URL + '/target-marker.php',
+        iconUrl: './php-lib/target-marker.php',
         shadowUrl: "http://cdn.leafletjs.com/leaflet-0.7.5/images/marker-shadow.png",
         iconAnchor: [14, 41],
         popupAnchor: [0, -33]
     });
     L.marker([EVENTKARTE_EVENT_POSITION.latitude, EVENTKARTE_EVENT_POSITION.longitude],{icon: targetIcon})
             .bindPopup(EVENTKARTE_EVENT_NAME).addTo(map);
-    $.getJSON( EVENTKARTE_LIB_URL + "/backend.php?get-routes", function( data ) {
+    $.getJSON("./php-lib/backend.php?get-routes", function( data ) {
         $.each(data,function(index,value){
             drawRoute(value);
             setMarkerForRoute(value);

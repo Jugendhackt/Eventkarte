@@ -1,6 +1,6 @@
 <?php
 session_start();
-include("./connect_db.php");
+include("../connect_db.php");
 
 if(isset($_POST["create-route"])) {
 	$route = json_decode($_POST["create-route"]);

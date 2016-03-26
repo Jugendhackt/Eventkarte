@@ -1,7 +1,7 @@
 function addRouteSegment(el) {
     var a = $("<div class=\"eventkarte-route-segment\"/>");
     a.insertAfter($(el).parent().parent());
-    a.load(EVENTKARTE_LIB_URL + "/templates/route-segment.php", function(){
+    a.load("php-lib/templates/route-segment.php", function(){
             $(a).hide(0).show(500);
     });
 }
@@ -111,7 +111,7 @@ function showMarker(lat, lon, name) {
     map.panTo([lat,lon], {animate:true, duration:1});
     setTimeout(function() {
         var grayIcon = L.icon({
-            iconUrl: EVENTKARTE_LIB_URL + '/icons/marker-icon-gray.png',
+            iconUrl: 'php-lib/icons/marker-icon-gray.png',
             shadowUrl: "http://cdn.leafletjs.com/leaflet-0.7.5/images/marker-shadow.png",
             iconAnchor: [14, 41],
             popupAnchor: [0, -33]
@@ -134,7 +134,7 @@ function checkLocation(el) {
     }
     $.ajax({
         type: 'GET',
-        async: false,
+        async: true,
         url: "http://nominatim.openstreetmap.org/search/" 
                 + encodeURI(townName) + "?format=json"
     }).success(function( data ) {
@@ -169,7 +169,7 @@ function contact(segment_id, name) {
     $("#eventkarte-receiver_segment").val(segment_id);
     $("#eventkarte-contact input").val("");
     $("#eventkarte-contact textarea").val("");
-    $("#eventkarte-contact").show(1500);
+    $("#eventkarte-contact").show(500);
     $('html, body').animate({
         scrollTop: $("#eventkarte-contact").offset().top
     }, 1500);
@@ -201,16 +201,6 @@ function sendMail() {
 
 $(document).ready(function() {
     setInterval(checkLocations, 2000);
-});
-
-$(window).scroll(function() {
-    var scroll = $(window).scrollTop();
-
-    if (scroll >= 20) {
-        $('h1').addClass('scroll');
-    } else {
-        $('h1').removeClass('scroll');
-    }
 });
 
 

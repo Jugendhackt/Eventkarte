@@ -5,7 +5,7 @@ $my_img = imageCreateFromPng("./icons/marker-icon-red-empty.png");
 imageAlphaBlending($my_img, true);
 imageSaveAlpha($my_img, true);
 
-$overlayImage = imageCreateFromPng($_SESSION["EVENTKARTE_EVENT_ICON"]);
+$overlayImage = imageCreateFromPng("../icon.png");
 imageAlphaBlending($overlayImage, true);
 imageSaveAlpha($overlayImage, true);
 

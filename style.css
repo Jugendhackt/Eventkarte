@@ -5,50 +5,44 @@
     color: #2B2B2B;
     box-sizing: border-box;
 }
-body {
-    max-width: 1000px;
-    margin: 0 auto;
+body>h1 {
+    background: #f2f2f2;
+    border-bottom: 1px solid #ccc;
+    padding: 10px;
+    box-sizing: border-box;
+    width: 100%;
+    font-weight: normal;
+    height: 60px;
+}
+h2 {
+    font-weight: normal;
+    margin-bottom: 10px;
+}
+#content {
+    width: 495px;
+    border-right: 1px solid #ccc;
+    position: absolute;
+    left: 0px;
+    top: 60px;
+    bottom: 0px;
     padding: 10px;
     overflow-y: scroll;
-    padding-top: 20px;
-    padding-bottom: 100px;
+    box-sizing: content-box;
 }
-html {
-    background: #f8f8ff;
+body, html {
+    height: 100%;
+}
+#map {
+    position: absolute;
+    top: 60px;
+    bottom: 0px;
+    right:0px;
+    left:500px;
+    box-sizing: border-box;
 }
 :focus {outline:none;}
 ::-moz-focus-inner {border:0;}
-h1 {
-    margin:0px auto;
-    text-align: left;
-    color: #f8f8ff;
-    border-bottom: 1px solid #cccccc;
-    position: fixed;
-    padding: 15px 0px;
-    box-shadow: 10px 10px 50px 20px #0078A8 inset;
-    right: 0px;
-    left: 0px;
-    top: 0px;
-    font-size: 45px;
-    text-align: center;
-    letter-spacing: 4.5px;
-    font-family: "Verdana", Helvetica, Arial, sans-serif;
-    background-color: #0078A8;
-    transition: 0.3s all ease;
-    z-index: 2000;
-    text-transform: uppercase;
-}
-h1.scroll {
-    padding: 10px 0px;
-    font-size: 30px;
-}
-h2 {
-    margin: 15px 0px;
-    text-align: center;
-}
-#content {
-    margin-top: 90px;
-}
+
 .eventkarte-route-types{
     border-left: 4px solid #0078A8;
     display: inline-block;
@@ -99,14 +93,6 @@ input:focus, textarea:focus {
     width: 100%;
     cursor:pointer;
 }
-div#map {
-    margin: 0px auto;
-    margin-bottom: 20px;
-    width: 700px;
-    height: 350px;
-    max-width: 100%;
-    border: 1px solid #0078A8;
-}
 #eventkarte form{
     width: 500px;
     max-width: 100%;
@@ -148,7 +134,7 @@ div#map {
     font-size: 120%;
 }
 #eventkarte-contact {
-    margin-top: 50px;
+    margin-top: 10px;
 }
 #eventkarte-contact input,#eventkarte-contact textarea {
     width: 100%;
@@ -159,4 +145,3 @@ div#map {
 #eventkarte-location-time {
     margin-right: 30px;
 }
-
