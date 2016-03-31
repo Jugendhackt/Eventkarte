@@ -18,8 +18,12 @@ h2 {
     font-weight: normal;
     margin-bottom: 10px;
 }
+body, html {
+    height: 100%;
+}
+@media(min-width: 50em){
 #content {
-    width: 495px;
+    width: 30%;
     border-right: 1px solid #ccc;
     position: absolute;
     left: 0px;
@@ -28,19 +32,34 @@ h2 {
     padding: 10px;
     overflow-y: scroll;
     box-sizing: content-box;
-}
-body, html {
-    height: 100%;
-}
+}}
+@media(max-width: 50em){
+    #content {
+        position: relative;
+        width: 100%;
+        top: 30em;
+        overflow: hidden;
+    }}
+
+@media(max-width: 50em){
+    #map {
+        position: absolute;
+        width: 100%;
+        top: 60px;
+        bottom: 30em;
+        overflow: visible;
+    }}
+
+@media(min-width: 50em){
 #map {
     position: absolute;
     top: 60px;
     bottom: 0px;
     right:0px;
-    left:500px;
+    left:30%;
     box-sizing: border-box;
     border-left: 1px solid #ccc;
-}
+}}
 :focus {outline:none;}
 ::-moz-focus-inner {border:0;}
 
