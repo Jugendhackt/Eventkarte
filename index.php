@@ -12,6 +12,7 @@
     </head>
     <body>
         <h1>Eventkarte</h1>
+        <div id="map"></div>
         <div id="content">
             <?php
             include("connect_db.php");
@@ -53,6 +54,5 @@
             </div>
             <script src="php-lib/map.js"></script>
         </div>
-        <div id="map"></div>
     </body>
 </html>

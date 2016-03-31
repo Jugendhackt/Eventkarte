@@ -21,9 +21,9 @@ h2 {
 body, html {
     height: 100%;
 }
-@media(min-width: 50em){
+
 #content {
-    width: 30%;
+    width: 450px;
     border-right: 1px solid #ccc;
     position: absolute;
     left: 0px;
@@ -32,41 +32,53 @@ body, html {
     padding: 10px;
     overflow-y: scroll;
     box-sizing: content-box;
-}}
-@media(max-width: 50em){
-    #content {
-        position: relative;
-        width: 100%;
-        top: 30em;
-        overflow: hidden;
-    }}
+}
 
-@media(max-width: 50em){
-    #map {
-        position: absolute;
-        width: 100%;
-        top: 60px;
-        bottom: 30em;
-        overflow: visible;
-    }}
-
-@media(min-width: 50em){
 #map {
     position: absolute;
     top: 60px;
     bottom: 0px;
     right:0px;
-    left:30%;
+    left: 455px;
     box-sizing: border-box;
     border-left: 1px solid #ccc;
-}}
+    z-index: 10;
+}
+
+@media(max-width: 900px){
+    #map {
+        position: relative;
+        top:0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 90%;
+        height: 350px;
+        box-sizing: border-box;
+        margin: 0 auto;
+        margin-top: 15px;
+    }
+    #content {
+        width: 90%;
+        position: relative;
+        top:0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        height: auto; 
+        overflow-y: hidden;
+        border: none;
+    }
+}
+
 :focus {outline:none;}
 ::-moz-focus-inner {border:0;}
 
 .eventkarte-route-types{
     border-left: 4px solid #0078A8;
     display: inline-block;
-    padding: 15px 5px;
+    padding: 10px 5px;
 }
 .eventkarte-route-plus img, .eventkarte-route-minus img{
     width: 25px;
@@ -74,6 +86,15 @@ body, html {
 }
 .eventkarte-route-type{
     margin-left: 16px;
+    overflow: hidden;
+    position:relative;
+    width: 100%;
+}
+
+@media(max-width: 500px){
+    .eventkarte-route-type{
+        margin-left: 0px;
+    }
 }
 .eventkarte-route-plus {
     margin-top: 26px;
@@ -98,6 +119,9 @@ input, textarea {
 input:focus, textarea:focus {
     border: 1px solid #0078A8;
 }
+.eventkarte-route-location {
+    line-height: 0px;
+}
 .eventkarte-route-location input {
     margin-bottom: 0px;
 }
@@ -119,9 +143,9 @@ input:focus, textarea:focus {
     font-size: 120%;
 }
 #eventkarte form{
-    width: 500px;
-    max-width: 100%;
+    width: 100%;
     margin: 0px auto;
+    overflow:hidden;
 }
 .eventkarte-location {
     width: 70%;
